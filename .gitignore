@@ -3,7 +3,7 @@
 
 # virtual environment
 venv
-pyvenv
+pyvenv.vfg
 
 # python
 pycache
