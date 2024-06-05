@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "crons": [
+    {
+      "path": "btc_forecast.py",
+      "schedule": "0 1 * * *"
+    }
+  ],
+  "builds": [
+      {
+          "src": "./index.py",
+          "use": "@vercel/python"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/"
+      }
+  ]
+}
