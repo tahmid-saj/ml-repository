@@ -6,6 +6,10 @@ from scripts.full_pipeline.sp500_forecast_multivariate_2_weeks import main_sp500
 from scripts.training.text_analyzer_ensemble_training import main_text_analyzer_training
 from scripts.prediction.text_analyzer_ensemble_prediction import main_text_analyzer_prediction
 
+from scripts.data_ops.text_summarizer_data_ops import *
+from scripts.etl.text_summarizer import text_summarizer_etl, text_summarizer_positional_embedding, text_summarizer_tribid_embedding
+from scripts.training_prediction import text_summarizer_prediction_evaluation, text_summarizer_test_prediction
+
 from api.controllers.btc_forecast_controller import *
 
 from fastapi import BackgroundTasks, FastAPI
@@ -74,6 +78,18 @@ async def schedule_text_analyzer(job_id: str, background_tasks: BackgroundTasks)
   else:
     return {
       "message": "unable to schedule text_analyzer"
+    }
+
+@app.post("/text_summarizer/{job_id}")
+async def schedule_text_summarizer(job_id: str, background_tasks: BackgroundTasks):
+  if job_id == os.getenv("TEXT_SUMMARIZER_BI_WEEKLY_JOB_ID"):
+    
+    return {
+      "message": "scheduled text_summarizer"
+    }
+  else:
+    return {
+      "message": "unable to schedule text_summarizer"
     }
 
 @app.get("/test-route")
