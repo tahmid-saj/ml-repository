@@ -1,0 +1,17 @@
+jobs:
+  btc_forecast:
+    name: "btc_forecast"
+    path: "./btc_forecast.py"
+    schedule: "0 1 * * *"
+  sp500_forecast:
+    name: "sp500_forecast"
+    path: "./sp500_forecast.py"
+    schedule: "0 1 * * *"
+  text_analyzer:
+    name: "text_analyzer"
+    path: "./text_analyzer.py"
+    schedule: "0 12 * * 2/2"
+  text_summarizer:
+    name: "text_summarizer"
+    path: "./text_summarizer.py"
+    schedule: "0 12 * * 2/2"
