@@ -5,8 +5,9 @@ from fastapi import BackgroundTasks, FastAPI
 from dotenv import load_dotenv
 import os
 
-# api routes for scheduled models
+load_dotenv()
 
+# api routes for scheduled models
 app = FastAPI()
 
 # scheduling jobs

@@ -10,3 +10,4 @@ yfinance
 # s3
 confuse
 torch
+pymongo
