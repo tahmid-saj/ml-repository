@@ -1,6 +1,11 @@
 from scripts.full_pipeline.btc_forecast_multivariate_current_day import main_btc_forecast_multivariate_current_day
 from scripts.full_pipeline.btc_forecast_multivariate_2_weeks import main_btc_forecast_multivariate_2_weeks
+
 from scripts.full_pipeline.sp500_forecast_multivariate_2_weeks import main_sp500_forecast_multivariate_2_weeks
+
+from scripts.training.text_analyzer_ensemble_training import main_text_analyzer_training
+from scripts.prediction.text_analyzer_ensemble_prediction import main_text_analyzer_prediction
+
 from api.controllers.btc_forecast_controller import *
 
 from fastapi import BackgroundTasks, FastAPI
@@ -25,6 +30,11 @@ def schedule_btc_forecast_helper():
 def schedule_sp500_forecast_helper():
   # generate predictions
   future_forecast_current_day = main_sp500_forecast_multivariate_2_weeks()
+
+def schedule_text_analyzer_helper():
+  # training and prediction
+  main_text_analyzer_training()
+  main_text_analyzer_prediction()
 
 # routes
 @app.post("/btc_forecast/{job_id}")
@@ -51,6 +61,19 @@ async def schedule_sp500_forecast(job_id: str, background_tasks: BackgroundTasks
   else:
     return {
       "message": "unable to schedule sp500_forecast"
+    }
+
+@app.post("/text_analyzer/{job_id}")
+async def schedule_text_analyzer(job_id: str, background_tasks: BackgroundTasks):
+  if job_id == os.getenv("TEXT_ANALYZER_BI_WEEKLY_JOB_ID"):
+    background_tasks.add_task(schedule_text_analyzer_helper)
+    
+    return {
+      "message": "scheduled text_analyzer"
+    }
+  else:
+    return {
+      "message": "unable to schedule text_analyzer"
     }
 
 @app.get("/test-route")

@@ -1,0 +1,6 @@
+from scripts.training.text_analyzer_ensemble_training import main_text_analyzer_training
+from scripts.prediction.text_analyzer_ensemble_prediction import main_text_analyzer_prediction
+
+# training and prediction
+main_text_analyzer_training()
+main_text_analyzer_prediction()
