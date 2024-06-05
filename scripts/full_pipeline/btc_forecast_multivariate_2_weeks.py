@@ -14,7 +14,7 @@ from datetime import datetime
 from sklearn.preprocessing import minmax_scale
 import yfinance as yf
 
-def main_forecase_multivariate_2_weeks():
+def main_forecast_multivariate_2_weeks():
   df_btc_price_closing = get_historical_btc_data()
 
   # Including block reward to the full BTC closing price dataset
