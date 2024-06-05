@@ -13,11 +13,13 @@ app = FastAPI()
 
 # scheduling jobs
 def schedule_btc_forecast_helper():
+  # generate predictions
   future_forecast_current_day = main_btc_forecast_multivariate_current_day()
   future_furecast_2_weeks = main_forecast_multivariate_2_weeks()
-  
-  saveDailyPrediction(list(future_forecast_current_day))
-  save2WeeksPrediction(list(future_furecast_2_weeks))
+
+  # save predictions
+  saveDailyPrediction(future_forecast_current_day)
+  save2WeeksPrediction(future_furecast_2_weeks)
 
 # routes
 @app.post("/btc_forecast/{job_id}")
