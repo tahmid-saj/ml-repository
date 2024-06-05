@@ -1,9 +1,9 @@
 from scripts.full_pipeline.btc_forecast_multivariate_current_day import main_btc_forecast_multivariate_current_day
-from scripts.full_pipeline.btc_forecast_multivariate_2_weeks import main_forecase_multivariate_2_weeks
+from scripts.full_pipeline.btc_forecast_multivariate_2_weeks import main_forecast_multivariate_2_weeks
 from api.controllers.btc_forecast_controller import *
 
 future_forecast_current_day = main_btc_forecast_multivariate_current_day()
-future_furecast_2_weeks = main_forecase_multivariate_2_weeks()
+future_furecast_2_weeks = main_forecast_multivariate_2_weeks()
 
 saveDailyPrediction(list(future_forecast_current_day))
 save2WeeksPrediction(list(future_furecast_2_weeks))
