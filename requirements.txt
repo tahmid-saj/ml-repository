@@ -5,6 +5,7 @@ scikit-learn
 # matplotlib
 # plotly
 tensorflow
+tensorflow_hub
 yfinance
 # boto3
 # s3

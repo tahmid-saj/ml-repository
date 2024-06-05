@@ -4,6 +4,18 @@
     {
       "path": "/btc_forecast.py",
       "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/sp500_forecast.py",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/text_analyzer.py",
+      "schedule": "0 12 * * 2/2"
+    },
+    {
+      "path": "/text_summarizer.py",
+      "schedule": "0 12 * * 2/2"
     }
   ]
 }
