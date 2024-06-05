@@ -1,0 +1,12 @@
+fastapi
+pandas
+numpy
+scikit-learn
+# matplotlib
+# plotly
+tensorflow
+yfinance
+# boto3
+# s3
+confuse
+torch

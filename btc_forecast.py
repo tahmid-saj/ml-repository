@@ -1,0 +1,5 @@
+from scripts.full_pipeline.btc_forecast_multivariate_current_day import main_btc_forecast_multivariate_current_day
+from scripts.full_pipeline.btc_forecast_multivariate_2_weeks import main_forecase_multivariate_2_weeks
+
+main_btc_forecast_multivariate_current_day()
+main_forecase_multivariate_2_weeks()
