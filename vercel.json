@@ -2,7 +2,7 @@
   "version": 2,
   "crons": [
     {
-      "path": "btc_forecast.py",
+      "path": "/btc_forecast.py",
       "schedule": "0 1 * * *"
     }
   ],
