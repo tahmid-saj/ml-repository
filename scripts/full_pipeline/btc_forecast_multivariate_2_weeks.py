@@ -95,3 +95,5 @@ def main_forecase_multivariate_2_weeks():
 
   # plot_future_forecast(df_btc_price=df_btc_price_closing, future_forecast=future_forecast)
   print(f"Future forecast: {future_forecast}")
+  
+  return future_forecast
