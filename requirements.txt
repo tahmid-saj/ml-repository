@@ -2,10 +2,11 @@ fastapi
 pandas
 numpy
 scikit-learn
-# matplotlib
+matplotlib
 # plotly
 tensorflow
 tensorflow_hub
+tensorflow_datasets
 yfinance
 # boto3
 # s3

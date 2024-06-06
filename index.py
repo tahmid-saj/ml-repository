@@ -10,6 +10,9 @@ from scripts.data_ops.text_summarizer_data_ops import *
 from scripts.etl.text_summarizer import text_summarizer_etl, text_summarizer_positional_embedding, text_summarizer_tribid_embedding
 from scripts.training_prediction import text_summarizer_prediction_evaluation, text_summarizer_test_prediction
 
+from scripts.etl.food_classifier.food_classifier_etl import *
+from scripts.training_prediction.food_classifier_efficientb0_training_prediction import *
+
 from api.controllers.btc_forecast_controller import *
 
 from fastapi import BackgroundTasks, FastAPI
@@ -90,6 +93,18 @@ async def schedule_text_summarizer(job_id: str, background_tasks: BackgroundTask
   else:
     return {
       "message": "unable to schedule text_summarizer"
+    }
+
+@app.post("/food_classifier/{job_id}")
+async def schedule_food_classifier(job_id: str, background_tasks: BackgroundTasks):
+  if job_id == os.getenv("FOOD_CLASSIFIER_BI_WEEKLY_JOB_ID"):
+    
+    return {
+      "message": "scheduled food_classifier"
+    }
+  else:
+    return {
+      "message": "unable to schedule food_classifier"
     }
 
 @app.get("/test-route")

@@ -15,3 +15,7 @@ jobs:
     name: "text_summarizer"
     path: "./text_summarizer.py"
     schedule: "0 12 * * 2/2"
+  food_classifier:
+    name: "food_classifier"
+    path: "./food_classifier.py"
+    schedule: "0 12 * * 2/2"
