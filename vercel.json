@@ -16,6 +16,10 @@
     {
       "path": "/text_summarizer.py",
       "schedule": "0 12 * * 2/2"
+    },
+    {
+      "path": "/food_classifier.py",
+      "schedule": "0 12 * * 2/2"
     }
   ]
 }
