@@ -5,6 +5,7 @@ pyvenv.vfg
 # files
 .ipynb
 vercel_dev.json
+.pb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
