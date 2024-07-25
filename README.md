@@ -22,7 +22,7 @@ Figure 1: High level view of the ML job scheduler and usage in other application
 
 ### Running the jobs / models:
 
-The jobs / models can be manually triggered via API calls or cron jobs:
+The jobs / models can be both manually triggered or scheduled via API calls or cron jobs respectively:
 
 1. __BTC forecast__: <em>btc_forecast.py</em>
 2. __S&P 500__: <em>sp500_forecast.py</em>
